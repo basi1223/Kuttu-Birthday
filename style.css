@@ -1,0 +1,55 @@
+*{box-sizing:border-box}
+:root{
+  --bg:#120914;--bg2:#1d0d1f;--pink:#ff6f9f;--soft:#ffc5d9;
+  --white:#fff7fb;--muted:#cbb6c3;--card:rgba(255,255,255,.07);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:"Nunito",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+radial-gradient(circle at 20% 10%,rgba(255,90,150,.18),transparent 30%),
+radial-gradient(circle at 90% 70%,rgba(180,70,255,.12),transparent 30%),var(--bg)}
+main{width:100%}
+.screen,.section{min-height:100svh;padding:70px 22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
+.hero{overflow:hidden}
+.glow{position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,75,139,.18);filter:blur(55px);animation:pulse 4s ease-in-out infinite}
+.tiny,.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:800;color:var(--soft)}
+h1,h2{font-family:"DM Serif Display",serif;font-weight:400;line-height:1.05;margin:18px 0}
+h1{font-size:clamp(58px,17vw,90px);position:relative}
+h1 span,h2 span{color:var(--pink)}
+h2{font-size:clamp(40px,11vw,62px)}
+.hero-sub,.body-copy{max-width:520px;color:var(--muted);font-size:16px;line-height:1.8}
+.primary-btn{border:0;border-radius:999px;padding:15px 25px;margin-top:25px;background:linear-gradient(135deg,#ff5f96,#c94cff);color:white;font-weight:800;font-size:15px;box-shadow:0 10px 35px rgba(255,72,143,.25);cursor:pointer;transition:.25s}
+.primary-btn:active{transform:scale(.95)}
+.scroll-hint{position:absolute;bottom:30px;color:#9e8997;font-size:12px;animation:bounce 1.8s infinite}
+.section{padding-top:90px;padding-bottom:90px}
+.reveal{background:linear-gradient(180deg,transparent,rgba(255,82,143,.04),transparent)}
+.body-copy{margin:0 auto}
+.paper{max-width:540px;width:100%;padding:32px 24px;background:#fff8f4;color:#402936;border-radius:4px;box-shadow:0 25px 70px rgba(0,0,0,.3);text-align:left;transform:rotate(-1deg)}
+.paper-top{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#a36a7f}
+.paper h2{font-size:42px;color:#512a3b;margin:12px 0 20px}
+.paper p{font-size:15px;line-height:1.85;margin:0 0 18px}
+.english-line{font-family:"DM Serif Display",serif;font-style:italic;color:#c34b78!important;font-size:19px!important;line-height:1.5!important}
+.signature{text-align:right;font-family:"DM Serif Display",serif;font-size:20px!important}
+.muted{color:var(--muted);margin-top:-5px}
+.photo-grid{width:100%;max-width:520px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.photo-card{aspect-ratio:1/1.12;border-radius:18px;background:linear-gradient(145deg,#2a152a,#180c1b);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;overflow:hidden}
+.photo-card.wide{grid-column:span 2;aspect-ratio:2/1}
+.photo-card span{font-size:40px}
+.photo-card small{color:#bca8b5;font-size:12px}
+.promise{background:radial-gradient(circle at center,rgba(255,83,147,.09),transparent 48%)}
+.ring{width:72px;height:72px;border:1px solid rgba(255,150,190,.5);border-radius:50%;display:grid;place-items:center;font-size:34px;color:var(--pink);margin-bottom:22px}
+.big{font-size:20px!important;margin-top:30px}
+.final{padding-bottom:100px}
+.cake{font-size:55px;margin-bottom:10px;animation:float 3s ease-in-out infinite}
+.final-card{margin-top:28px;padding:22px 20px;width:100%;max-width:440px;border:1px solid rgba(255,143,184,.2);background:rgba(255,255,255,.05);border-radius:20px}
+.final-card p{font-family:"DM Serif Display",serif;font-style:italic;font-size:21px;line-height:1.45;margin:0 0 12px}
+.final-card span{font-size:22px}
+.replay{background:transparent;border:1px solid rgba(255,255,255,.2);box-shadow:none;color:#e7d9e1}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.heart{position:absolute;bottom:-30px;animation:rise linear forwards;opacity:.8;font-size:14px}
+.music-note{position:fixed;right:15px;bottom:15px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#ff9fbd;font-size:18px;opacity:.6}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@keyframes pulse{50%{transform:scale(1.15);opacity:.7}}
+@keyframes bounce{50%{transform:translateY(7px)}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media(min-width:700px){.screen,.section{padding-left:10%;padding-right:10%}.photo-grid{grid-template-columns:repeat(4,1fr)}.photo-card.wide{grid-column:span 2}}
