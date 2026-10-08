@@ -12,10 +12,11 @@ function makeHeart(){
   hearts.appendChild(h);
   setTimeout(()=>h.remove(),10000);
 }
+
 setInterval(makeHeart,900);
 
 startBtn.addEventListener("click",()=>{
-  document.querySelector(".reveal").scrollIntoView({behavior:"smooth"});
+  document.querySelector(".memories").scrollIntoView({behavior:"smooth"});
   for(let i=0;i<12;i++) setTimeout(makeHeart,i*120);
 });
 
@@ -33,4 +34,5 @@ const observer=new IntersectionObserver((entries)=>{
     }
   });
 },{threshold:.12});
+
 document.querySelectorAll(".section > *").forEach(el=>observer.observe(el));
